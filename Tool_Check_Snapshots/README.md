@@ -1,56 +1,103 @@
-### Step 1: Initialize a Git Repository
+# 🖥️ RISC-V Reference SoC Tapeout Program (VSD)
 
-First, you need to create a local Git repository in the directory where your files are located. Navigate to the folder containing your document and images (`gtkwave.jpeg`, `iverilog.jpeg`, `yosys.jpg`).
+## 📌 Introduction  
 
-```bash
-cd /path/to/your/project
-git init
-```
+This guide walks you through the installation of essential FPGA/ASIC design and verification tools — **Yosys**, **Icarus Verilog**, and **GTKWave** — on an Ubuntu Linux system.  
 
-This command initializes an empty Git repository.
+---
 
-### Step 2: Create a Repository on GitHub
+## 🎯 Objective  
 
-Go to your GitHub account and create a **new repository**. You can give it a name like `RISC-V-Reference-SoC-Tools`. **Do not initialize the new repository with a README, .gitignore, or license file** as you will be pushing an existing project.
+The aim of this document is to help you set up and configure key open-source tools for FPGA and ASIC workflows on a Linux environment.  
 
-### Step 3: Add Files to the Repository
+By the end of this setup, you’ll be able to:  
 
-Next, add all your project files to the staging area.
+- Design and develop HDL/RTL modules  
+- Run simulations and functional verification  
+- View and analyze waveforms with GTKWave  
+- Streamline your FPGA and ASIC design process  
 
-```bash
-git add .
-```
+---
 
-This command stages all the new and modified files in the current directory.
+## 🔧 Tools Covered  
 
-### Step 4: Commit the Files
+- **Yosys 🟢** – Open-source synthesis tool for Verilog  
+- **Icarus Verilog (Iverilog) 🔵** – Verilog simulation and synthesis tool  
+- **GTKWave 🟣** – Waveform viewer for simulation results  
 
-Commit the staged files with a descriptive message.
+Together, these tools create a complete open-source HDL design and verification environment.  
 
-```bash
-git commit -m "Initial commit of FPGA tool installation guide and images"
-```
+---
 
-This creates the first commit in your local repository.
+## ⚙️ System Requirements  
 
-### Step 5: Connect to the Remote Repository
+Make sure your system meets at least the following specs to ensure smooth installation and operation:  
 
-Now, you need to link your local repository to the one you created on GitHub. Replace `<your_username>` and `<your_repository_name>` with your actual GitHub username and repository name.
+- 💾 **RAM:** 6 GB or more (for compiling/simulating larger HDL designs)  
+- 📂 **Storage:** 50 GB HDD free (for tools, libraries, and simulation files)  
+- 🐧 **OS:** Ubuntu 20.04 or newer (full compatibility)  
+- ⚡ **CPU:** 4 vCPUs or more (faster synthesis, simulation, waveform processing)  
 
-```bash
-git remote add origin https://github.com/<your_username>/<your_repository_name>.git
-```
+---
 
-This command tells Git where your remote repository is located.
+## 🛠️ Tool Check & Installation  
 
-### Step 6: Push to GitHub
-
-Finally, push your committed files from your local repository to the remote repository on GitHub.
+### Yosys  
 
 ```bash
-git push -u origin master
+sudo apt-get update
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys
+sudo apt install make    # If make is not installed
+sudo apt-get install build-essential clang bison flex \
+  libreadline-dev gawk tcl-dev libffi-dev git \
+  graphviz xdot pkg-config python3 libboost-system-dev \
+  libboost-python-dev libboost-filesystem-dev zlib1g-dev
+
+make config-gcc
+
+# Initialize abc submodule before building
+git submodule update --init --recursive
+
+make
+sudo make install
 ```
 
-This uploads all the files, including the document and images, to your GitHub repository. The `-u` flag sets the upstream branch, so future `git push` commands will be simpler (`git push`).
+✅ **Yosys installed successfully**  
 
-Your files are now on GitHub. You can verify this by refreshing the repository page in your browser.
+
+
+### Icarus Verilog  
+
+```bash
+sudo apt-get update
+sudo apt-get install iverilog
+```
+
+✅ **Icarus Verilog installed successfully**  
+
+---
+
+### GTKWave  
+
+```bash
+sudo apt-get update
+sudo apt install gtkwave
+```
+
+✅ **GTKWave installed successfully**  
+
+---
+
+## 📝 Conclusion  
+
+You’ve successfully installed **Yosys**, **Icarus Verilog**, and **GTKWave**.  
+With this setup, you now have a complete open-source environment for:  
+
+- HDL design  
+- RTL synthesis  
+- Functional simulation  
+- Waveform analysis  
+
+This toolchain empowers efficient FPGA and ASIC development workflows. 🚀  
+````
