@@ -89,7 +89,7 @@ sudo apt install gtkwave
 
 ✅ **GTKWave installed successfully**  
 
----
+![Image](https://github.com/user-attachments/assets/8b1bca30-b86a-4411-8272-74679f6f4ad8)
 
 ## 🚀 Wrap-Up  
 
