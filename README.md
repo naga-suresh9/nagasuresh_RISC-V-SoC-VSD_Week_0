@@ -1,4 +1,4 @@
-# My Journey in the RISC-V SoC Tapeout Program  
+# Journey for the RISC-V- Program  
 
 Welcome! This repository documents my progress and key takeaways as I participate in the **VLSI System Design (VSD) RISC-V System-on-Chip (SoC) Tapeout Program**.  
 My objective is to record each phase of the journey — from digital logic design all the way to the final physical layout.  
