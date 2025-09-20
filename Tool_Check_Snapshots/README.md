@@ -78,7 +78,7 @@ sudo apt-get install iverilog
 
 ✅ **Icarus Verilog installed successfully**  
 
----
+![Image](https://github.com/user-attachments/assets/5366620d-6c00-4098-839a-046a6d7931a0)
 
 ### 3️⃣ GTKWave  
 
