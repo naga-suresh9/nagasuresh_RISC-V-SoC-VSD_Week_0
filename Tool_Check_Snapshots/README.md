@@ -64,7 +64,7 @@ sudo make install
 ```
 
 ✅ **Yosys installed successfully**  
-
+![Image](https://github.com/user-attachments/assets/9fa7a4c7-9df9-4975-924f-9c6c5703e939)
 
 
 ### Icarus Verilog  
